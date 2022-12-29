@@ -1,12 +1,13 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 2
 // Return an array of all Asteroids' names
 // Return example: ['name1', 'name2', ... , 'nameN']
-
+const asteroidArray = data.asteroids.map((obj) => obj.name);
 export function getAsteroidNames(data) {
-  // Your code goes here...
+  return asteroidArray;
 }
+console.table(asteroidArray);
 
 
 
