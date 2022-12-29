@@ -1,12 +1,17 @@
-import { data } from "../data/data";
+
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 1
 // Return an array of all Planets' names
 // Return example: ['name1', 'name2', ... , 'nameN']
-
+const planetArray = data.planets.map((obj) => obj.name);
 export function getPlanetNames(data) {
-  // Your code goes here...
-}
+  return planetArray;
+}; 
+
+
+console.table(planetArray);
+
 
 
 
