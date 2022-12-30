@@ -8,7 +8,7 @@ import { data } from "../data/data.js";
 
 
 export function getPlanetsWithLowGravity(data) {
-  const planet0 = data.planets.map((obj1) => obj1.name);
+const planet0 = data.planets.map((obj1) => obj1.name);
 const gravity = data.planets.map((obj) => obj.gravity);
 const planets = planet0.toString();
 const planet = planets.split(',');
