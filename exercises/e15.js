@@ -1,11 +1,30 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 15
 // Return an array of Planets' names without moons
 // Return example: ['name1', 'name2', ... , 'nameN']
 
+
 export function getPlanetsWithNoMoons(data) {
-  // Your code goes here...
+const planets = data.planets.map((obj) => obj);
+const pLength = planets.length;
+const lowMoons = [];
+const notLow = [];
+function MoonFilt() {
+  let a = 0;
+  while (a < pLength) {
+    if (planets[a].moonsCount === undefined) {
+      lowMoons.push(planets[a]);
+    } else {
+      notLow.push(planets[a]);
+    }
+    a = a + 1
+  }
+};
+MoonFilt();
+const lowMPlanNames0 = lowMoons.filter((obj) => obj.name);
+const lowMPlanNames = lowMPlanNames0.map((obj) => obj.name);
+return lowMPlanNames;
 }
 
 

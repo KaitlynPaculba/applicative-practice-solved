@@ -9,7 +9,6 @@ import { data } from "../data/data.js";
 
 export function lowMoonsPlanets(data) {
  const planets = data.planets.map((obj) => obj);
-const moons = planets.moons;
 const pLength = planets.length;
 const lowMoons = [];
 const notLow = [];
