@@ -3,11 +3,12 @@ import { data } from "../data/data.js";
 // SPACE DATA EXERCISE 3
 // Return an array of all Planets' average temperatures
 // Return example: [1, 2, ... , N]
-const avTempArray = data.planets.map((obj) => obj.avgTemp)
+
 export function getAllAverageTemperatures(data) {
+  const avTempArray = data.planets.map((obj) => obj.avgTemp)
   return avTempArray;
 }
-console.table(avTempArray);
+
 
 
 // === TEST YOURSELF ===

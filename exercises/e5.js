@@ -5,23 +5,9 @@ import { data } from "../data/data.js";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithMassValue(data, number) {
-const planetNames = data.planets.map((obj) => obj.name);
-const planetMass = data.planets.map((obj) => obj.mass.massValue);
-const planMassArr = [];
-  number = 4;
-function objConst() {
-  let a = 0;
-  while (a < 8) {
-    let newObj = { name: planetNames[a], massValue: planetMass[a] };
-    planMassArr.push(newObj);
-    a = a + 1;
-  }
-};
-objConst();
-const planFilt = planMassArr.filter((obj) => obj.massValue > number);
-  const finalMassArr = planFilt.map((obj) => obj.name);
-  number = number + 1;
-  return finalMassArr;
+  return data.planets
+    .filter((obj) => obj.mass.massValue > number)
+    .map((obj) => obj.name);
 }
 
 

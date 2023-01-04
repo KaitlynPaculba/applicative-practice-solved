@@ -4,36 +4,13 @@ import { data } from "../data/data.js";
 // Return a Planet name by a given moon name
 // Return example: 'Planet Name'
 
- export function findPlanetNameByMoon(data, moonName) {
-  const planets = data.planets.map((obj) => obj.name);
-  const planMoon = data.planets.map((obj) => obj.moons);
-  const planLength = planets.length;
-  const planMoonArr = [];
-  function objConst() {
-    let a = 0;
-    while (a < planLength) {
-      const newObj = { name: planets[a], moons: planMoon[a] };
-      planMoonArr.push(newObj);
-      a = a + 1;
-    }
-  };
-  objConst();
-  function MoonFilt() {
-    let a = 0;
-    while (a < planLength) {
-      if (planMoonArr[a].moons.includes(moonName)) {
-        return planMoonArr[a].name;
-      } else {
-        a = a + 1
-      }
-    }
-  };
-  MoonFilt();
-  const MoonFiltTag = MoonFilt();
-   return MoonFiltTag;
- }
-
-
+export function findPlanetNameByMoon(data, moonName) {
+  const filt0 = data.planets.map((obj) => obj.moons !== undefined);
+  const filt1 = filt0.includes(moonName);
+  return filt1;
+    
+    
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"
