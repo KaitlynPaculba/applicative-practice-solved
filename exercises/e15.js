@@ -6,25 +6,9 @@ import { data } from "../data/data.js";
 
 
 export function getPlanetsWithNoMoons(data) {
-const planets = data.planets.map((obj) => obj);
-const pLength = planets.length;
-const lowMoons = [];
-const notLow = [];
-function MoonFilt() {
-  let a = 0;
-  while (a < pLength) {
-    if (planets[a].moonsCount === undefined) {
-      lowMoons.push(planets[a]);
-    } else {
-      notLow.push(planets[a]);
-    }
-    a = a + 1
-  }
-};
-MoonFilt();
-const lowMPlanNames0 = lowMoons.filter((obj) => obj.name);
-const lowMPlanNames = lowMPlanNames0.map((obj) => obj.name);
-return lowMPlanNames;
+  const planetsMoons = data.planets.filter((plt) => plt.moonsCount === undefined);
+  const filt1 = planetsMoons.map((plt) => plt.name);
+  return filt1;
 }
 
 
