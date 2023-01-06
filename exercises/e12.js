@@ -5,25 +5,11 @@ import { data } from "../data/data.js";
 // Return example: 42
 
 
-
 export function allPlanetsMoonsCount(data) {
-const planets = data.planets.map((obj) => obj);
-const moonCount = planets.map((obj) => obj.moonsCount);
-const moonNum = moonCount.filter((obj) => obj > 0);
-const moonLength = moonNum.length;
-const equationAdd = [];
-const test = moonNum.values();
-function moonNumEquate() {
-  let a = 0;
-  while (a < moonLength) {
-  const newObj =  moonNum[a] + moonNum[a + 1];
-    equationAdd.push(newObj);
-    a = a + 2;
-  }
-};
-moonNumEquate();
-let sum = equationAdd[0] + equationAdd[1] + equationAdd[2];
-  return sum;
+  const planetsMoons = data.planets.map((plt) => plt.moonsCount);
+  const planFIlt = planetsMoons.filter((plt) => plt > 0);
+  const equate2 = planFIlt.reduce((pre, cur) => pre + cur);
+  return equate2;
 }
 
 

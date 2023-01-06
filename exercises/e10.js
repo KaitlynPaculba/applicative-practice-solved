@@ -5,19 +5,9 @@ import { data } from "../data/data.js";
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
 export function getAsteroidDataByName(data, asteroidName) {
-const asteroids = data.asteroids.map((obj) => obj);
-const asteroidSearch = asteroids.filter((obj) => obj.name === asteroidName)
-const asteroidLength = asteroidSearch.length;
-const asteroid = asteroidSearch.reduce(function objConst(result, item) {
-  let a = 0;
-  while (a < asteroidLength) {
-  var key = Object.keys(item)[a];
-  result[key] = item[key]
-  result;
-  a = a + 1;
-  } { };});
-  const selectAsteroid = asteroid;
-  return selectAsteroid;
+  const asteroidsFilt = data.asteroids.filter((ast) => ast.name === asteroidName)
+  const astMap = asteroidsFilt.map((ast) => ast);
+  return astMap[0];
 }
 
 
